@@ -6,8 +6,9 @@ var Promise = require('bluebird');
 var parseUrl = Promise.promisify(require('node-microdata-scraper').parseUrl);
 
 function parseJSON(json) {
+  var data = {};
 
-  json.forEach(function(schema) {
+  _.each(json, function(schema) {
     var properties = schema.properties;
     if ( schema.name === 'http://schema.org/Product' ) {
       data.name = properties.name;
@@ -23,7 +24,9 @@ function parseJSON(json) {
 
 module.exports = {
   fetch: function(url) {
-    return parseUrl(url).then(parseJSON).then(function(data) {
+    return parseUrl(url).then(function(response) {
+      return JSON.parse(response);
+    }).then(parseJSON).then(function(data) {
       return _.extend(data, { url: url });
     });
   }
