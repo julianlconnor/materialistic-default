@@ -1,0 +1,30 @@
+{
+  "name": "materialistic-default",
+  "version": "0.0.0",
+  "description": "Materialistic default plugin.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muffs/materialistic-default"
+  },
+  "keywords": [
+    "materialistic",
+    "default",
+    "plugin",
+    "scraper"
+  ],
+  "author": "Julian Connor <julianlconnor@gmail.com> (muffs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muffs/materialistic-default/issues"
+  },
+  "dependencies": {
+    "bluebird": "~2.3.4",
+    "cheerio": "~0.17.0",
+    "lodash": "~2.4.1",
+    "node-microdata-scraper": "0.0.3"
+  }
+}
